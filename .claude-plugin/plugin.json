@@ -1,0 +1,20 @@
+{
+  "name": "commscore",
+  "displayName": "CommScore",
+  "version": "1.0.0",
+  "description": "Write and review customer communications in your organisation's brand voice with CommScore: brand voice guides, terminology checks, five-pillar scores with the fixes that matter, and on-brand rewrites.",
+  "author": {
+    "name": "Customer Science Group",
+    "email": "support@commscore.ai",
+    "url": "https://commscore.ai"
+  },
+  "homepage": "https://commscore.ai",
+  "repository": "https://github.com/customer-science/commscore-plugin",
+  "license": "Apache-2.0",
+  "keywords": ["communications", "brand voice", "customer experience", "writing", "review"],
+  "icon": "./assets/icon.png",
+  "documentationUrl": "https://commscore.ai/support/",
+  "supportUrl": "https://commscore.ai/support/",
+  "privacyPolicyUrl": "https://commscore.ai/privacy/",
+  "termsOfServiceUrl": "https://commscore.ai/terms/"
+}

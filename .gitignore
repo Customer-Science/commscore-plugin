@@ -1,0 +1,15 @@
+# OS and editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Build output (packaged plugin bundles)
+dist/
+*.zip
+*.plugin
+
+# Never commit secrets
+.env
+*.env

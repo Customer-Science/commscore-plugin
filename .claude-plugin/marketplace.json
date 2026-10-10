@@ -1,0 +1,15 @@
+{
+  "name": "commscore",
+  "description": "CommScore by Customer Science: write and review customer communications in your organisation's brand voice.",
+  "owner": {
+    "name": "Customer Science Group",
+    "email": "support@commscore.ai"
+  },
+  "plugins": [
+    {
+      "name": "commscore",
+      "source": "./",
+      "description": "Write and review customer communications in your organisation's brand voice with CommScore."
+    }
+  ]
+}

@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "commscore": {
+      "type": "http",
+      "url": "https://api.commscore.ai/mcp"
+    }
+  }
+}

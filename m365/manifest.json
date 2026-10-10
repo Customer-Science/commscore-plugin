@@ -1,0 +1,272 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.30",
+  "version": "1.1.0",
+  "id": "fa470ac8-0e6e-48fe-8c61-df912c4e6db4",
+  "developer": {
+    "name": "Customer Science Group",
+    "websiteUrl": "https://commscore.ai",
+    "privacyUrl": "https://commscore.ai/privacy/",
+    "termsOfUseUrl": "https://commscore.ai/terms/"
+  },
+  "name": {
+    "short": "CommScore",
+    "full": "CommScore"
+  },
+  "description": {
+    "short": "Write and review customer communications in your brand's voice.",
+    "full": "CommScore helps you write and review customer communications in your organisation's brand voice, wherever you work in Microsoft 365.\n\nIn Word and Outlook: select text in a document or an email to get a live CommScore and a brand-aware rewrite you can apply in place.\n\nIn Microsoft 365 Copilot: Ask Copilot to draft an email, letter, text message, notice or web copy for one of your brands, and it follows that brand's tone, style and preferred terms, then checks the draft before handing it over. Share an existing communication and CommScore scores it from 1 to 5 on five pillars: clarity; certainty; structure, style and grammar; brand alignment; and customer experience. Each score comes with the top things to fix and the quoted text behind them. You can rewrite a draft in the brand's voice, re-score it to see what improved and check wording against the brand's preferred and avoided terms.\n\nSign in with your CommScore account to connect."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#E35C00",
+  "validDomains": [
+    "commscore.ai",
+    "app.commscore.ai",
+    "pulse.commscore.ai"
+  ],
+  "authorization": {
+    "permissions": {
+      "resourceSpecific": [
+        {
+          "name": "MailboxItem.ReadWrite.User",
+          "type": "Delegated"
+        },
+        {
+          "name": "Document.ReadWrite.User",
+          "type": "Delegated"
+        }
+      ]
+    }
+  },
+  "extensions": [
+    {
+      "requirements": {
+        "scopes": [
+          "document",
+          "mail"
+        ]
+      },
+      "runtimes": [
+        {
+          "requirements": {
+            "scopes": [
+              "document"
+            ],
+            "capabilities": [
+              {
+                "name": "AddinCommands",
+                "minVersion": "1.1"
+              }
+            ]
+          },
+          "id": "CommScoreRuntime",
+          "type": "general",
+          "code": {
+            "page": "https://pulse.commscore.ai/taskpane.html"
+          },
+          "lifetime": "short",
+          "actions": [
+            {
+              "id": "ShowTaskpane",
+              "type": "openPage",
+              "view": "dashboard"
+            }
+          ]
+        },
+        {
+          "requirements": {
+            "scopes": [
+              "mail"
+            ],
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.3"
+              }
+            ]
+          },
+          "id": "CommScoreMailRuntime",
+          "type": "general",
+          "code": {
+            "page": "https://pulse.commscore.ai/taskpane.html"
+          },
+          "lifetime": "short",
+          "actions": [
+            {
+              "id": "ShowMailTaskpane",
+              "type": "openPage",
+              "view": "dashboard"
+            }
+          ]
+        }
+      ],
+      "ribbons": [
+        {
+          "requirements": {
+            "scopes": [
+              "document"
+            ],
+            "capabilities": [
+              {
+                "name": "AddinCommands",
+                "minVersion": "1.1"
+              }
+            ]
+          },
+          "contexts": [
+            "default"
+          ],
+          "tabs": [
+            {
+              "builtInTabId": "TabHome",
+              "groups": [
+                {
+                  "id": "CommScoreGroup",
+                  "label": "CommScore",
+                  "icons": [
+                    {
+                      "size": 16,
+                      "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                    },
+                    {
+                      "size": 32,
+                      "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                    },
+                    {
+                      "size": 80,
+                      "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                    }
+                  ],
+                  "controls": [
+                    {
+                      "id": "CommScoreTaskpaneButton",
+                      "type": "button",
+                      "label": "Open",
+                      "supertip": {
+                        "title": "CommScore",
+                        "description": "Open CommScore to review and rewrite your selected text."
+                      },
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                        }
+                      ],
+                      "actionId": "ShowTaskpane"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "requirements": {
+            "scopes": [
+              "mail"
+            ],
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.3"
+              }
+            ]
+          },
+          "contexts": [
+            "mailCompose",
+            "mailRead"
+          ],
+          "tabs": [
+            {
+              "builtInTabId": "TabDefault",
+              "groups": [
+                {
+                  "id": "CommScoreMailGroup",
+                  "label": "CommScore",
+                  "icons": [
+                    {
+                      "size": 16,
+                      "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                    },
+                    {
+                      "size": 32,
+                      "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                    },
+                    {
+                      "size": 80,
+                      "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                    }
+                  ],
+                  "controls": [
+                    {
+                      "id": "CommScoreMailTaskpaneButton",
+                      "type": "button",
+                      "label": "CommScore",
+                      "supertip": {
+                        "title": "CommScore",
+                        "description": "Open CommScore to review and rewrite your message."
+                      },
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                        }
+                      ],
+                      "actionId": "ShowMailTaskpane"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "agentSkills": [
+    {
+      "folder": "./skills/write-on-brand"
+    },
+    {
+      "folder": "./skills/review-a-communication"
+    },
+    {
+      "folder": "./skills/set-up-a-brand"
+    }
+  ],
+  "agentConnectors": [
+    {
+      "id": "commscore",
+      "displayName": "CommScore",
+      "description": "CommScore brand voice guides, terminology checks, scoring, rewrites and score history.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://api.commscore.ai/mcp",
+          "authorization": {
+            "type": "OAuthPluginVault",
+            "referenceId": "ODliNDQ3MGYtMTQxOC00ZDc3LTg5NDgtYjNhZjQyYjc2ODhlIyM4MjUxNzVjMC1iMGJjLTRkZjYtYjUxMy0zY2E3MTI5ZmQwOTY="
+          }
+        }
+      }
+    }
+  ]
+}
