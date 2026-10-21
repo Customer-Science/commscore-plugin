@@ -61,8 +61,11 @@ Keep it short and concrete:
   depends on a fact you don't have, use a placeholder such as `[new limit]`.
 - Review, don't rewrite: unless the user asked for a fixed version, give the fixes and
   offer the rewrite (step 4) rather than rewriting the whole text.
-- Mention `reading_grade` when the audience is the general public: a lower grade is easier
-  for more people to read.
+- Mention the reading level only when `reading_level.fit` says it is harder than the
+  audience needs: quote `reading_level.summary` (for example "Year 10 (upper secondary):
+  harder than a general-public audience needs (Year 8 or lower)"). Call it the reading
+  level, never a reading age or a bare grade, and don't treat a level that suits its
+  audience as a problem.
 - If `check_terminology` would add something (the brand has avoid terms and the text may
   use them), run it too. It is instant and free. List any avoided terms with their
   alternatives.

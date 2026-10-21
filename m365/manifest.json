@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.30/MicrosoftTeams.schema.json",
   "manifestVersion": "1.30",
-  "version": "1.1.0",
+  "version": "1.1.3",
   "id": "fa470ac8-0e6e-48fe-8c61-df912c4e6db4",
   "developer": {
-    "name": "Customer Science Group",
+    "name": "Customer Science",
     "websiteUrl": "https://commscore.ai",
     "privacyUrl": "https://commscore.ai/privacy/",
-    "termsOfUseUrl": "https://commscore.ai/terms/"
+    "termsOfUseUrl": "https://commscore.ai/eula/"
   },
   "name": {
     "short": "CommScore",
@@ -15,7 +15,7 @@
   },
   "description": {
     "short": "Write and review customer communications in your brand's voice.",
-    "full": "CommScore helps you write and review customer communications in your organisation's brand voice, wherever you work in Microsoft 365.\n\nIn Word and Outlook: select text in a document or an email to get a live CommScore and a brand-aware rewrite you can apply in place.\n\nIn Microsoft 365 Copilot: Ask Copilot to draft an email, letter, text message, notice or web copy for one of your brands, and it follows that brand's tone, style and preferred terms, then checks the draft before handing it over. Share an existing communication and CommScore scores it from 1 to 5 on five pillars: clarity; certainty; structure, style and grammar; brand alignment; and customer experience. Each score comes with the top things to fix and the quoted text behind them. You can rewrite a draft in the brand's voice, re-score it to see what improved and check wording against the brand's preferred and avoided terms.\n\nSign in with your CommScore account to connect."
+    "full": "CommScore helps you write and review customer communications in your organisation's brand voice, wherever you work in Microsoft 365.\n\nIn Word and Outlook: select text in a document or an email to get a live CommScore and a brand-aware rewrite you can apply in place.\n\nIn Microsoft 365 Copilot: Ask Copilot to draft an email, letter, text message, notice or web copy for one of your brands, and it follows that brand's tone, style and preferred terms, then checks the draft before handing it over. Share an existing communication and CommScore scores it from 1 to 5 on five pillars: clarity; certainty; structure, style and grammar; brand alignment; and customer experience. Each score comes with the top things to fix and the quoted text behind them. You can rewrite a draft in the brand's voice, re-score it to see what improved and check wording against the brand's preferred and avoided terms.\n\nRequirements: In order to use this app, you need to have an active CommScore account. Please contact our support team at support@commscore.ai or https://commscore.ai/support/ for more details. Sign in with your work Microsoft account if your organisation is connected to CommScore, or with your CommScore email. The Copilot features need a Microsoft 365 Copilot licence.\n\nGet started: https://commscore.ai/#demo\nHelp: https://commscore.ai/support/\nContact us: support@commscore.ai"
   },
   "icons": {
     "color": "color.png",
@@ -98,7 +98,14 @@
             {
               "id": "ShowMailTaskpane",
               "type": "openPage",
-              "view": "dashboard"
+              "view": "dashboard",
+              "pinnable": false
+            },
+            {
+              "id": "ShowMailReadTaskpane",
+              "type": "openPage",
+              "view": "dashboard",
+              "pinnable": false
             }
           ]
         }
@@ -184,8 +191,7 @@
             ]
           },
           "contexts": [
-            "mailCompose",
-            "mailRead"
+            "mailCompose"
           ],
           "tabs": [
             {
@@ -232,6 +238,73 @@
                         }
                       ],
                       "actionId": "ShowMailTaskpane"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "requirements": {
+            "scopes": [
+              "mail"
+            ],
+            "capabilities": [
+              {
+                "name": "Mailbox",
+                "minVersion": "1.3"
+              }
+            ]
+          },
+          "contexts": [
+            "mailRead"
+          ],
+          "tabs": [
+            {
+              "builtInTabId": "TabDefault",
+              "groups": [
+                {
+                  "id": "CommScoreMailReadGroup",
+                  "label": "CommScore",
+                  "icons": [
+                    {
+                      "size": 16,
+                      "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                    },
+                    {
+                      "size": 32,
+                      "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                    },
+                    {
+                      "size": 80,
+                      "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                    }
+                  ],
+                  "controls": [
+                    {
+                      "id": "CommScoreMailReadTaskpaneButton",
+                      "type": "button",
+                      "label": "CommScore",
+                      "supertip": {
+                        "title": "CommScore",
+                        "description": "Open CommScore to score this email."
+                      },
+                      "icons": [
+                        {
+                          "size": 16,
+                          "url": "https://pulse.commscore.ai/assets/icon-16-v2.png"
+                        },
+                        {
+                          "size": 32,
+                          "url": "https://pulse.commscore.ai/assets/icon-32-v2.png"
+                        },
+                        {
+                          "size": 80,
+                          "url": "https://pulse.commscore.ai/assets/icon-80-v2.png"
+                        }
+                      ],
+                      "actionId": "ShowMailReadTaskpane"
                     }
                   ]
                 }

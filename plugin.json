@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "commscore",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Write and review customer communications in your organisation's brand voice with CommScore.",
   "author": {
     "name": "Customer Science Group",

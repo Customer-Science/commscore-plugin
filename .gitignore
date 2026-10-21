@@ -5,7 +5,8 @@ desktop.ini
 .vscode/
 .idea/
 
-# Build output (packaged plugin bundles)
+# Build output (packaged plugin bundles) and build tooling
+node_modules/
 dist/
 *.zip
 *.plugin
