@@ -1,3 +1,9 @@
+## 1.0.3 (2026-10-23)
+
+### Bug Fixes
+
+* **m365:** limitations in the app description, as in Partner Center (app 1.1.4)
+
 ## 1.0.2 (2026-10-21)
 
 ### Bug Fixes
